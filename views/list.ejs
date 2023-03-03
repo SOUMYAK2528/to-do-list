@@ -1,22 +1,26 @@
 <%- include("header") -%>
 <body>
-    <div class="box" id="heading ">
-        <h1 style="color:purple">
+    <div class="box" id="heading">
+        <h1 style="color:#000080">
             <%=listTitle%>
         </h1>
 
     </div>
     <div class="box">
-        <% for(let i=0; i < newListItem.length;i++ ){ %>
-            <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%= newListItem[i] %>
-                </p>
-            </div>
+        <% newListItem.forEach(function(ele){ %>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" name="checkbox" value="<%=ele._id%>" onChange="this.form.submit()" style="" >
+                    <p>
+                        <%= ele.name %>
+                    </p>
+                </div>
+                <input type="hidden" name="hide" value="<%=listTitle%>" ></input>
+            </form>
+            
 
-            <% } %>
-                <form action="/" method="post">
+            <% })%>
+                <form class="item1" action="/" method="post">
                     <input type="text" name="todo" placeholder="new item" autocomplete="off">
                     <button type="submit" name="list" value="<%=listTitle%>">+</button>
                 </form>
