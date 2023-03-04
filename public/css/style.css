@@ -103,9 +103,9 @@ html {
   button {
     margin-right: 12px;
     margin-left: 279px;
-    position: absolute;
-    top: 398px;
-    left: -17px;
+    position: relative;
+    top: -49px;
+    left: 20px;
 
   }
   p {
