@@ -18,13 +18,13 @@ const itemSchema = {
 const items = mongoose.model("item", itemSchema);
 const item1 = new items({
     id: 1,
-    name: "this is a basic todoList app"
+    name: "This is a basic todoList app"
 });
 const item2 = new items({
-    name: "click on plus sign to add elements"
+    name: "Click on plus sign to add elements"
 });
 const item3 = new items({
-    name: "click on - sign to delete an item"
+    name: "Click on checkbox sign to delete an item"
 })
 var defaultItems = [item1, item2, item3];
 const listSchema = {
